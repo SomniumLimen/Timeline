@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>当城市沉入梦乡</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="stage" aria-labelledby="page-title">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1 id="page-title">当城市沉入梦乡</h1>
+          <p class="lead">
+            有些人的工作才刚刚开始。他们是深夜的守夜人，是黎明前的独行侠。
+          </p>
+        </div>
+        <div class="clock-face" aria-hidden="true">
+          <span id="clockTime">00:00</span>
+          <i id="clockHand"></i>
+        </div>
+      </section>
+
+      <section class="timeline-shell" aria-label="深夜职业时间轴">
+        <div class="timeline">
+          <div class="track" aria-hidden="true"></div>
+          <div class="nodes" id="timelineNodes"></div>
+        </div>
+
+        <article class="story-panel" id="storyPanel" aria-live="polite">
+          <div class="story-media" id="storyMedia"></div>
+          <div class="story-content">
+            <p class="time-label" id="storyTime"></p>
+            <h2 id="storyTitle"></h2>
+            <p class="story-subtitle" id="storySubtitle"></p>
+            <p class="story-tone" id="storyTone"></p>
+            <div class="story-text" id="storyText"></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
