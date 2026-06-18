@@ -48,11 +48,22 @@
         <div id="storyCards" class="story-cards"></div>
       </section>
 
-      <section class="credits" aria-label="素材来源">
-        <h2>素材来源</h2>
-        <div id="creditsList"></div>
-      </section>
     </main>
+
+    <section class="story-dialog" id="storyDialog" aria-hidden="true">
+      <div class="dialog-backdrop" data-close-dialog></div>
+      <article class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+        <button class="dialog-close" type="button" aria-label="关闭详情" data-close-dialog>×</button>
+        <div class="dialog-media" id="dialogMedia"></div>
+        <div class="dialog-body">
+          <p class="dialog-kicker" id="dialogKicker"></p>
+          <h2 id="dialogTitle"></h2>
+          <p class="dialog-subtitle" id="dialogSubtitle"></p>
+          <p class="dialog-tone" id="dialogTone"></p>
+          <div class="dialog-text" id="dialogText"></div>
+        </div>
+      </article>
+    </section>
 
     <button class="music-toggle" id="musicToggle" type="button" aria-label="切换背景音乐">
       <span id="musicStatus">音乐</span>

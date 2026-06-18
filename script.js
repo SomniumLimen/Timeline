@@ -5,16 +5,13 @@ const stories = [
     subtitle: "裘淑蓉（48岁，杭州）",
     entry: "医院走廊的灯",
     tone: "陪伴与慰藉，接住独居病人的孤独与无助",
-    cover: "hospital-corridor.jpg",
-    coverAlt: "医院病房窗边",
-    credit: {
-      name: "Hospital corridor",
-      creator: "Carlos Ebert",
-      license: "CC BY",
-      url: "https://www.flickr.com/photos/42042512@N00/2242493200"
-    },
-    paragraph:
-      "她提前等候、整理病历、记录医嘱，把独居老人从挂号台一路护送到回家的车站。"
+    icon: "陪",
+    images: ["image5.jpg", "image6.jpg"],
+    paragraphs: [
+      "裘淑蓉曾是超市收银员，五年前转行做全职医院陪诊，常年奔波在杭州各大医院，专门帮扶独居老人、异地看病的弱势群体。",
+      "去年深秋，78岁的杜奶奶独自来市区看心脏科，子女远在外地，无助又忐忑。裘淑蓉提前等候接诊，耐心帮老人操作挂号、整理多年病历。",
+      "就诊全程，她细致记录医嘱、用药剂量和复查时间，中午拿出随身带的牛奶面包安抚空腹不适的老人。看完病后，她贴心护送老人到车站，反复叮嘱安全。"
+    ]
   },
   {
     time: "00:30",
@@ -22,16 +19,14 @@ const stories = [
     subtitle: "地下隧道里的「轨道医生」",
     entry: "地铁隧道通风口",
     tone: "毫米级匠心，用专业托举城市通勤安全",
-    cover: "subway-track.jpg",
-    coverAlt: "夜间地铁隧道检修",
-    credit: {
-      name: "fastrack",
-      creator: "MTAPhotos",
-      license: "CC BY",
-      url: "https://www.flickr.com/photos/61135621@N03/8393705236"
-    },
-    paragraph:
-      "最后一班地铁驶回车辆段，他们背着工具包走进隧道，逐米排查每一段钢轨。"
+    icon: "轨",
+    images: ["image1.jpg", "image2.jpeg"],
+    paragraphs: [
+      "最后一班地铁驶回车辆段，城市的地下脉络彻底归于沉寂。",
+      "零点三十分，张天宇和班组同事换好工装，背上工具包走入漆黑的隧道。他们是只在深夜出没的「轨道医生」。",
+      "7公里的线路，要俯身逐米排查。手电筒扫过钢轨表面，检查锤判断内部伤损，激光测量仪反复校准轨距。",
+      "没人认得他的脸，但每一个坐早班地铁的乘客，都踩过他亲手守护的轨道。"
+    ]
   },
   {
     time: "01:20",
@@ -39,16 +34,13 @@ const stories = [
     subtitle: "丁建军（36岁，广州）",
     entry: "写字楼设备告警",
     tone: "默默守护整栋写字楼的设备运转",
-    cover: "office-night.jpg",
-    coverAlt: "夜间亮灯的写字楼",
-    credit: {
-      name: "San Francisco Office Building Night",
-      creator: "Wonderlane",
-      license: "CC0",
-      url: "https://www.flickr.com/photos/71401718@N00/2972847595"
-    },
-    paragraph:
-      "暴雨夜里，设备告警、天台空调故障、楼层管道积水，他一个人抢修到凌晨。"
+    icon: "维",
+    images: ["image7.jpeg", "image8.png"],
+    paragraphs: [
+      "丁建军从事写字楼夜班运维六年，昼夜颠倒，默默守护整栋写字楼的设备运转。",
+      "暴雨深夜，写字楼突发设备告警，天台空调故障、楼层水管爆裂积水严重。他独自冒雨抢修，连夜关阀门、排积水、抢救办公设备与重要文件。",
+      "险情过后，他依旧按规完成整夜机房、消防、配电巡检，细致做好交接台账。"
+    ]
   },
   {
     time: "02:00",
@@ -56,69 +48,60 @@ const stories = [
     subtitle: "夜间全程照料寄养宠物",
     entry: "寄养室夜间巡查",
     tone: "通宵值守，耐心与责任心并重",
-    cover: "pet-kennel.jpg",
-    coverAlt: "宠物寄养笼舍",
-    credit: {
-      name: "dog kennel",
-      creator: "Acme Canine",
-      license: "CC BY",
-      url: "https://www.flickr.com/photos/34595254@N08/3209403615"
-    },
-    paragraph:
-      "换水、喂食、巡查状态、安抚应激情绪，夜色越深，越需要温柔和耐心。"
+    icon: "宠",
+    images: ["image11.jpeg", "image12.jpeg"],
+    paragraphs: [
+      "宠物深夜寄养员负责夜间照料寄养宠物，定时投喂、更换饮水、清理笼舍与排泄物。",
+      "他们要巡查宠物精神、饮食和睡眠状态，按要求喂药，及时处理呕吐、突发躁动等异常状况，并同步向宠主反馈夜间状态。",
+      "这份工作需要通宵值守，也需要足够稳定的耐心和责任心。"
+    ]
   },
   {
     time: "03:15",
     title: "夜间图书管理员",
     subtitle: "城市深夜的「掌灯人」",
     entry: "街角书房玻璃窗",
-    tone: "用灯光守住城市的精神角落",
-    cover: "night-library.jpg",
-    coverAlt: "夜色中的图书馆建筑",
-    credit: {
-      name: "Library of Congress, Washington DC",
-      creator: "Pierre Blache",
-      license: "CC0",
-      url: "https://www.flickr.com/photos/141783395@N02/49205211721"
-    },
-    paragraph:
-      "他轻手轻脚整理书架、补热水、调亮台灯，让深夜无处落脚的人有一块安静地方。"
+    tone: "温柔的陪伴，用灯光守住城市的精神角落",
+    icon: "书",
+    images: ["image3.jpeg", "image4.jpg"],
+    paragraphs: [
+      "街上的商铺陆续熄了灯，街角这间24小时书吧的暖黄光，还亮着。",
+      "黄威是这里的夜班管理员，整理书架、补充热水、擦拭桌面，更多时候，他是个安静的「旁观者」。",
+      "他给备考学生关掉震动闹钟，给拖着行李的姑娘放一杯温水，给读古籍的老人调亮靠窗台灯。",
+      "「有人说我们是看店的，其实我们是守灯的。这盏灯亮着，城市就有一块温柔的地方。」"
+    ]
   },
   {
     time: "04:00",
     title: "菜市场分拣员",
     subtitle: "王芳，42岁",
     entry: "菜市场生鲜分拣",
-    tone: "守着市井烟火，用细心做好平凡小事",
-    cover: "fresh-vegetables.jpg",
-    coverAlt: "市场里的新鲜蔬菜",
-    credit: {
-      name: "Fresh vegetables",
-      creator: "shankar s.",
-      license: "CC BY",
-      url: "https://www.flickr.com/photos/77742560@N06/7637461480"
-    },
-    paragraph:
-      "天不亮就到摊位，分级、打包、复核订单，保障街坊买到新鲜放心的生鲜。"
+    tone: "日复一日守着市井烟火，用细心勤恳做好平凡小事",
+    icon: "鲜",
+    images: ["image9.jpeg", "image10.jpeg"],
+    paragraphs: [
+      "42岁的王芳在菜市场生鲜分拣岗位工作五年，每天天不亮就到摊位，整理当日果蔬、分级分拣打包。",
+      "她细致剔除烂叶，轻放鲜果减少磕碰损耗，精准配好居民订购的食材，日均分拣两百多份货品。",
+      "节假日市场客流暴涨，她主动加班。靠着这份踏实工作，她撑起家里日常开支，也保障街坊买到新鲜放心的生鲜。"
+    ]
   }
 ];
 
-const musicCredit = {
-  name: "a soothing song.mp3",
-  creator: "cheesepuff",
-  license: "CC0",
-  url: "https://freesound.org/people/cheesepuff/sounds/110215"
-};
-
-const webAssetBase = "./assets/web/";
+const docxImageBase = "./assets/docx-images/";
 const storyCardsEl = document.querySelector("#storyCards");
 const dockDotsEl = document.querySelector("#dockDots");
 const dockTimeEl = document.querySelector("#dockTime");
 const travelerEl = document.querySelector("#traveler");
-const creditsListEl = document.querySelector("#creditsList");
 const bgMusicEl = document.querySelector("#bgMusic");
 const musicToggleEl = document.querySelector("#musicToggle");
 const musicStatusEl = document.querySelector("#musicStatus");
+const dialogEl = document.querySelector("#storyDialog");
+const dialogMediaEl = document.querySelector("#dialogMedia");
+const dialogKickerEl = document.querySelector("#dialogKicker");
+const dialogTitleEl = document.querySelector("#dialogTitle");
+const dialogSubtitleEl = document.querySelector("#dialogSubtitle");
+const dialogToneEl = document.querySelector("#dialogTone");
+const dialogTextEl = document.querySelector("#dialogText");
 
 let activeIndex = 0;
 let userPausedMusic = false;
@@ -128,19 +111,11 @@ function renderStories() {
     .map(
       (story, index) => `
         <article class="chapter${index === 0 ? " active" : ""}" data-index="${index}" data-time="${story.time}">
-          <div class="scene-card">
-            <div class="scene-media" style="--cover: url('${webAssetBase}${story.cover}')" role="img" aria-label="${story.coverAlt}"></div>
-            <div class="scene-body">
-              <div class="scene-kicker">
-                <span>${story.entry}</span>
-                <span>${story.time}</span>
-              </div>
-              <h2>${story.title}</h2>
-              <p class="scene-subtitle">${story.subtitle}</p>
-              <p class="scene-tone">${story.tone}</p>
-              <p>${story.paragraph}</p>
-            </div>
-          </div>
+          <button class="story-marker" type="button" data-index="${index}" aria-label="查看 ${story.time} ${story.title}">
+            <span class="marker-thumb" style="--cover: url('${docxImageBase}${story.images[0]}')"></span>
+            <span class="marker-symbol">${story.icon}</span>
+          </button>
+          <p class="marker-caption">${story.title}</p>
         </article>
       `
     )
@@ -155,34 +130,7 @@ function renderStories() {
     .join("");
 }
 
-function renderCredits() {
-  const imageCredits = stories
-    .map(
-      ({ credit }) => `
-        <p>
-          图片：<a href="${credit.url}" target="_blank" rel="noreferrer">${credit.name}</a>
-          / ${credit.creator} / ${credit.license}
-        </p>
-      `
-    )
-    .join("");
-
-  creditsListEl.innerHTML = `
-    <div class="credits-list">
-      ${imageCredits}
-      <p>
-        音乐：<a href="${musicCredit.url}" target="_blank" rel="noreferrer">${musicCredit.name}</a>
-        / ${musicCredit.creator} / ${musicCredit.license}
-      </p>
-    </div>
-  `;
-}
-
 function setActive(index) {
-  if (index === activeIndex) {
-    return;
-  }
-
   activeIndex = index;
   dockTimeEl.textContent = stories[index].time;
   travelerEl.style.setProperty("--tilt", `${index % 2 === 0 ? -13 : 15}deg`);
@@ -194,6 +142,28 @@ function setActive(index) {
   document.querySelectorAll(".dock-dot").forEach((dot, dotIndex) => {
     dot.classList.toggle("active", dotIndex === index);
   });
+}
+
+function openStory(index) {
+  const story = stories[index];
+  setActive(index);
+
+  dialogMediaEl.innerHTML = story.images
+    .map((image, imageIndex) => `<img src="${docxImageBase}${image}" alt="${story.title}图片${imageIndex + 1}" />`)
+    .join("");
+  dialogKickerEl.textContent = `${story.time} / ${story.entry}`;
+  dialogTitleEl.textContent = story.title;
+  dialogSubtitleEl.textContent = story.subtitle;
+  dialogToneEl.textContent = story.tone;
+  dialogTextEl.innerHTML = story.paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join("");
+
+  dialogEl.setAttribute("aria-hidden", "false");
+  document.body.classList.add("dialog-open");
+}
+
+function closeStory() {
+  dialogEl.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("dialog-open");
 }
 
 function observeStories() {
@@ -210,7 +180,7 @@ function observeStories() {
       }
     },
     {
-      threshold: [0.38, 0.52, 0.66],
+      threshold: [0.36, 0.5, 0.64],
       rootMargin: "-18% 0px -24% 0px"
     }
   );
@@ -227,6 +197,27 @@ function bindNavigation() {
 
     const chapter = document.querySelector(`.chapter[data-index="${dot.dataset.index}"]`);
     chapter?.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  storyCardsEl.addEventListener("click", (event) => {
+    const marker = event.target.closest(".story-marker");
+    if (!marker) {
+      return;
+    }
+
+    openStory(Number(marker.dataset.index));
+  });
+
+  dialogEl.addEventListener("click", (event) => {
+    if (event.target.closest("[data-close-dialog]")) {
+      closeStory();
+    }
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && dialogEl.getAttribute("aria-hidden") === "false") {
+      closeStory();
+    }
   });
 }
 
@@ -279,7 +270,6 @@ function bindMusic() {
 }
 
 renderStories();
-renderCredits();
 bindNavigation();
 observeStories();
 bindMusic();
