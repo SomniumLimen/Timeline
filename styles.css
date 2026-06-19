@@ -12,6 +12,8 @@
   --rose: #e57b67;
   --line: rgba(255, 239, 199, 0.2);
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+  --traveler-x: 250px;
+  --traveler-y: 0px;
 }
 
 * {
@@ -80,7 +82,7 @@ p {
   z-index: -2;
   background:
     linear-gradient(180deg, rgba(7, 9, 13, 0.22), rgba(7, 9, 13, 0.92)),
-    url("./assets/docx-images/image8.png") center / cover;
+    url("./assets/story-art/night-lamp.jpg") center / cover;
   opacity: 0.82;
 }
 
@@ -246,7 +248,7 @@ h1 {
 .road {
   width: 100%;
   height: 100%;
-  min-height: 5520px;
+  min-height: 100%;
   position: absolute;
   inset: 0 0 auto;
   z-index: -1;
@@ -277,51 +279,24 @@ h1 {
 }
 
 .traveler {
-  width: 58px;
-  height: 58px;
+  width: 96px;
+  height: 72px;
   display: grid;
   place-items: center;
-  position: sticky;
-  top: 58vh;
-  left: calc(50% + 82px);
-  z-index: 8;
-  margin-left: calc(50% + 76px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
   pointer-events: none;
-  transform: rotate(var(--tilt, -12deg));
-  transition: transform 260ms ease;
+  transform: translate(calc(var(--traveler-x) - 48px), calc(var(--traveler-y) - 36px)) rotate(var(--tilt, -12deg));
+  transition: transform 180ms ease;
 }
 
-.traveler span {
-  width: 0;
-  height: 0;
-  position: relative;
+.traveler img {
+  width: 100%;
+  height: auto;
   display: block;
-  border-top: 15px solid transparent;
-  border-bottom: 15px solid transparent;
-  border-left: 44px solid var(--teal);
-  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.34));
-}
-
-.traveler span::before {
-  content: "";
-  position: absolute;
-  left: -41px;
-  top: -8px;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 24px solid var(--paper-strong);
-}
-
-.traveler span::after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  left: -56px;
-  top: -15px;
-  border: 2px solid #fff4d3;
-  border-radius: 50%;
-  background: var(--rose);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.36));
 }
 
 .story-cards {
@@ -336,12 +311,44 @@ h1 {
   padding: 76px 20px 52px;
 }
 
+.chapter-scene {
+  width: min(72vw, 290px);
+  aspect-ratio: 1.28;
+  position: absolute;
+  top: 16%;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(255, 239, 199, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 15, 0.04), rgba(8, 10, 15, 0.46)),
+    var(--scene) center / cover;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.28);
+  opacity: 0.34;
+  filter: saturate(0.96);
+}
+
+.chapter-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(23, 16, 22, 0.2), rgba(23, 16, 22, 0.76));
+}
+
 .chapter:nth-child(odd) {
   justify-items: start;
 }
 
 .chapter:nth-child(even) {
   justify-items: end;
+}
+
+.chapter:nth-child(odd) .chapter-scene {
+  right: -58px;
+}
+
+.chapter:nth-child(even) .chapter-scene {
+  left: -58px;
 }
 
 .chapter::before {
@@ -381,7 +388,7 @@ h1 {
   display: grid;
   place-items: center;
   position: relative;
-  z-index: 5;
+  z-index: 7;
   padding: 0;
   border: 2px solid rgba(255, 239, 199, 0.8);
   border-radius: 50%;
@@ -456,6 +463,8 @@ h1 {
   font-size: 13px;
   font-weight: 800;
   backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 7;
 }
 
 .chapter:nth-child(odd) .marker-caption {
@@ -659,7 +668,7 @@ h1 {
 .dialog-media {
   min-height: 178px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   background: #241711;
 }
 

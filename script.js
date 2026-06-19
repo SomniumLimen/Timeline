@@ -6,7 +6,7 @@ const stories = [
     entry: "医院走廊的灯",
     tone: "陪伴与慰藉，接住独居病人的孤独与无助",
     icon: "陪",
-    images: ["image5.jpg", "image6.jpg"],
+    images: ["hospital-companion.jpg", "stethoscope.jpg"],
     paragraphs: [
       "裘淑蓉曾是超市收银员，五年前转行做全职医院陪诊，常年奔波在杭州各大医院，专门帮扶独居老人、异地看病的弱势群体。",
       "去年深秋，78岁的杜奶奶独自来市区看心脏科，子女远在外地，无助又忐忑。裘淑蓉提前等候接诊，耐心帮老人操作挂号、整理多年病历。",
@@ -20,7 +20,7 @@ const stories = [
     entry: "地铁隧道通风口",
     tone: "毫米级匠心，用专业托举城市通勤安全",
     icon: "轨",
-    images: ["image1.jpg", "image2.jpeg"],
+    images: ["rail-night.jpg", "train-day.jpg"],
     paragraphs: [
       "最后一班地铁驶回车辆段，城市的地下脉络彻底归于沉寂。",
       "零点三十分，张天宇和班组同事换好工装，背上工具包走入漆黑的隧道。他们是只在深夜出没的「轨道医生」。",
@@ -35,7 +35,7 @@ const stories = [
     entry: "写字楼设备告警",
     tone: "默默守护整栋写字楼的设备运转",
     icon: "维",
-    images: ["image7.jpeg", "image8.png"],
+    images: ["storm-maintenance.jpg", "night-lamp.jpg"],
     paragraphs: [
       "丁建军从事写字楼夜班运维六年，昼夜颠倒，默默守护整栋写字楼的设备运转。",
       "暴雨深夜，写字楼突发设备告警，天台空调故障、楼层水管爆裂积水严重。他独自冒雨抢修，连夜关阀门、排积水、抢救办公设备与重要文件。",
@@ -49,7 +49,7 @@ const stories = [
     entry: "寄养室夜间巡查",
     tone: "通宵值守，耐心与责任心并重",
     icon: "宠",
-    images: ["image11.jpeg", "image12.jpeg"],
+    images: ["pet-care.jpg", "tree-sun.jpg"],
     paragraphs: [
       "宠物深夜寄养员负责夜间照料寄养宠物，定时投喂、更换饮水、清理笼舍与排泄物。",
       "他们要巡查宠物精神、饮食和睡眠状态，按要求喂药，及时处理呕吐、突发躁动等异常状况，并同步向宠主反馈夜间状态。",
@@ -63,7 +63,7 @@ const stories = [
     entry: "街角书房玻璃窗",
     tone: "温柔的陪伴，用灯光守住城市的精神角落",
     icon: "书",
-    images: ["image3.jpeg", "image4.jpg"],
+    images: ["library-night-worker.jpg", "library-children.jpg", "library-sun.jpg"],
     paragraphs: [
       "街上的商铺陆续熄了灯，街角这间24小时书吧的暖黄光，还亮着。",
       "黄威是这里的夜班管理员，整理书架、补充热水、擦拭桌面，更多时候，他是个安静的「旁观者」。",
@@ -78,7 +78,7 @@ const stories = [
     entry: "菜市场生鲜分拣",
     tone: "日复一日守着市井烟火，用细心勤恳做好平凡小事",
     icon: "鲜",
-    images: ["image9.jpeg", "image10.jpeg"],
+    images: ["market-sorter.jpg", "cherry-tree.jpg"],
     paragraphs: [
       "42岁的王芳在菜市场生鲜分拣岗位工作五年，每天天不亮就到摊位，整理当日果蔬、分级分拣打包。",
       "她细致剔除烂叶，轻放鲜果减少磕碰损耗，精准配好居民订购的食材，日均分拣两百多份货品。",
@@ -87,11 +87,13 @@ const stories = [
   }
 ];
 
-const docxImageBase = "./assets/docx-images/";
+const storyImageBase = "./assets/story-art/";
 const storyCardsEl = document.querySelector("#storyCards");
 const dockDotsEl = document.querySelector("#dockDots");
 const dockTimeEl = document.querySelector("#dockTime");
 const travelerEl = document.querySelector("#traveler");
+const journeyEl = document.querySelector(".journey");
+const roadPathEl = document.querySelector(".road-line");
 const bgMusicEl = document.querySelector("#bgMusic");
 const musicToggleEl = document.querySelector("#musicToggle");
 const musicStatusEl = document.querySelector("#musicStatus");
@@ -111,8 +113,9 @@ function renderStories() {
     .map(
       (story, index) => `
         <article class="chapter${index === 0 ? " active" : ""}" data-index="${index}" data-time="${story.time}">
+          <div class="chapter-scene" style="--scene: url('${storyImageBase}${story.images[0]}')" aria-hidden="true"></div>
           <button class="story-marker" type="button" data-index="${index}" aria-label="查看 ${story.time} ${story.title}">
-            <span class="marker-thumb" style="--cover: url('${docxImageBase}${story.images[0]}')"></span>
+            <span class="marker-thumb" style="--cover: url('${storyImageBase}${story.images[0]}')"></span>
             <span class="marker-symbol">${story.icon}</span>
           </button>
           <p class="marker-caption">${story.title}</p>
@@ -149,7 +152,7 @@ function openStory(index) {
   setActive(index);
 
   dialogMediaEl.innerHTML = story.images
-    .map((image, imageIndex) => `<img src="${docxImageBase}${image}" alt="${story.title}图片${imageIndex + 1}" />`)
+    .map((image, imageIndex) => `<img src="${storyImageBase}${image}" alt="${story.title}图片${imageIndex + 1}" />`)
     .join("");
   dialogKickerEl.textContent = `${story.time} / ${story.entry}`;
   dialogTitleEl.textContent = story.title;
@@ -188,6 +191,24 @@ function observeStories() {
   chapters.forEach((chapter) => observer.observe(chapter));
 }
 
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function updateTravelerPosition() {
+  const journeyRect = journeyEl.getBoundingClientRect();
+  const roadRect = document.querySelector(".road").getBoundingClientRect();
+  const viewportAnchor = window.innerHeight * 0.58;
+  const progress = clamp((viewportAnchor - journeyRect.top) / journeyRect.height, 0, 1);
+  const pathLength = roadPathEl.getTotalLength();
+  const point = roadPathEl.getPointAtLength(pathLength * progress);
+  const x = (point.x / 390) * roadRect.width;
+  const y = (point.y / 5400) * roadRect.height;
+
+  travelerEl.style.setProperty("--traveler-x", `${x}px`);
+  travelerEl.style.setProperty("--traveler-y", `${y}px`);
+}
+
 function bindNavigation() {
   dockDotsEl.addEventListener("click", (event) => {
     const dot = event.target.closest(".dock-dot");
@@ -219,6 +240,9 @@ function bindNavigation() {
       closeStory();
     }
   });
+
+  window.addEventListener("scroll", updateTravelerPosition, { passive: true });
+  window.addEventListener("resize", updateTravelerPosition);
 }
 
 function updateMusicButton() {
@@ -273,3 +297,4 @@ renderStories();
 bindNavigation();
 observeStories();
 bindMusic();
+updateTravelerPosition();
